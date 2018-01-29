@@ -1,0 +1,23 @@
+{
+    "plugins": [
+        "@babel/plugin-syntax-typescript",
+        "transform-remove-console",
+        "minify-constant-folding",
+        "minify-dead-code-elimination",
+        [
+            "minify-replace",
+            {
+                "replacements": [
+                    {
+                        "identifierName": "/build/app/",
+                        "replacement": {
+                            "type": "stringLiteral",
+                            "value": "./build/app/"
+                        }
+                    }
+                ]
+            }
+        ],
+        "./babel-plugin-http-to-file-path"
+    ]
+}
